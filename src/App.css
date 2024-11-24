@@ -1,0 +1,253 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a2a3a, #101d2d);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  padding: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #ffeb3b;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffb74d;
+}
+
+.players {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px; 
+}
+
+.player-card {
+  background: linear-gradient(135deg, #4e5a6b, #2f3b4d);
+  border-radius: 25px;
+  padding: 20px;
+  width: 170px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  flex-grow: 1; 
+  flex-basis: 170px;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.player-card.winner {
+  border: 3px solid gold;
+  background: linear-gradient(135deg, #5d5a3e, #3b3317);
+  color: #f2e600;
+}
+
+.winner-text {
+  color: gold;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.player-card.loser {
+  border: 3px solid #d32f2f;
+  background: linear-gradient(135deg, #b92b2b, #ff3b30);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(211, 47, 47, 0.6);
+}
+
+.loser-text {
+  color: #ff3b30;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.dice-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff6347, #ff4500);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff4500, #e03d20);
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.dice {
+  font-size: 3.5rem;
+  padding: 25px;
+  background: linear-gradient(135deg, #2a3d4f, #1e2c39);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1200px) {
+  .game-board {
+    gap: 25px;
+  }
+
+  .players {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .player-card {
+    width: 200px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .game-board {
+    gap: 20px;
+  }
+
+  .players {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-card {
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 20px;
+    flex-basis: 280px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-board {
+    gap: 15px;
+  }
+
+  .players {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-card {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    flex-basis: 300px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .dice {
+    font-size: 3rem;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .players {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-card {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 15px;
+    flex-basis: 350px;
+  }
+
+  .dice {
+    font-size: 2.8rem;
+    padding: 18px;
+  }
+
+  button {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
